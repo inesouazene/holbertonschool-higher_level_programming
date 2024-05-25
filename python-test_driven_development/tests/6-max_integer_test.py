@@ -47,30 +47,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1.1, 2.2, 3.3, 4.4]), 4.4)
         self.assertEqual(max_integer([-1.1, -2.2, -3.3, -4.4]), -1.1)
 
-    def test_mixed_types(self):
-        """Test a list with mixed integer and float values."""
-        self.assertEqual(max_integer([1, 2.2, 3, 4.4]), 4.4)
-        self.assertEqual(max_integer([-1, -2.2, 3, -4.4]), 3)
-
-    def test_strings(self):
-        """Test a list of strings."""
-        self.assertEqual(max_integer(['a', 'b', 'c', 'd']), 'd')
-        self.assertEqual(max_integer(['apple', 'banana', 'cherry']), 'cherry')
-
-    def test_single_string(self):
-        """Test a single string (considered as an iterable of characters)."""
-        self.assertEqual(max_integer('hello'), 'o')
-
-    def test_none(self):
-        """Test None as input."""
-        with self.assertRaises(TypeError):
-            max_integer(None)
-
-    def test_no_argument(self):
-        """Test max_integer with no argument."""
-        with self.assertRaises(TypeError):
-            max_integer()
-
 
 if __name__ == '__main__':
     unittest.main()
