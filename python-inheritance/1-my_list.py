@@ -4,10 +4,7 @@
 
 class MyList(list):
     """subclass of list"""
-    def __init__(self):
-        """initialize object"""
-        super().__init__()
-
     def print_sorted(self):
         """print sorted list"""
-        print(sorted(self))
+        def print_sorted(self):
+            print(sorted(self))
