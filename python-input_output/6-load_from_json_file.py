@@ -13,10 +13,6 @@ def load_from_json_file(filename):
 
     Returns:
         object: The Python object representation of the JSON data.
-
-    Raises:
-        FileNotFoundError: If the file does not exist.
-        json.JSONDecodeError: If the file contains invalid JSON.
     """
     with open(filename, "r", encoding="utf-8") as file:
         return json.load(file)
