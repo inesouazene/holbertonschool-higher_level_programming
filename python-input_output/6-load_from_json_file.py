@@ -18,5 +18,5 @@ def load_from_json_file(filename):
         FileNotFoundError: If the file does not exist.
         json.JSONDecodeError: If the file contains invalid JSON.
     """
-    with open(filename) as file:
+    with open(filename, "r") as file:
         return json.load(file)
