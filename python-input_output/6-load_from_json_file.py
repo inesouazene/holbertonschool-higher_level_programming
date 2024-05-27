@@ -19,4 +19,4 @@ def load_from_json_file(filename):
         json.JSONDecodeError: If the file contains invalid JSON.
     """
     with open(filename, mode='r', encoding="utf-8") as file:
-        return json.load(file)
+        return(json.load(file))
