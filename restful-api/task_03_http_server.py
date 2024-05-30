@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """task_03_http_server.py: A simple HTTP server
 that returns a JSON response."""
 
