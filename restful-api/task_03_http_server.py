@@ -41,8 +41,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             }
             self.wfile.write(json.dumps(data).encode("utf-8"))
         else:
-            self.send_response(404)
-            self.wfile.write(b'Endpoint not found')
+            self.send_error(404, "Endpoint not found")
 
 
 def run(server_class=HTTPServer,
