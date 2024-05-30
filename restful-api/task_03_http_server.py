@@ -2,12 +2,12 @@
 """task_03_http_server.py: A simple HTTP server
 that returns a JSON response."""
 
-import json
 import http.server
+import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     """A simple HTTP request handler."""
     def do_GET(self):
         """Handle GET requests."""
