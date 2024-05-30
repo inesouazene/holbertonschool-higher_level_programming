@@ -3,6 +3,7 @@
 that returns a JSON response."""
 
 import json
+import http.server
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
