@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """task_03_http_server.py: A simple HTTP server
-that returns a JSON response."""
+that returns a JSON response.
+"""
 
 import http.server
 import json
@@ -28,7 +29,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"OK")
         elif self.path == "/info":
-            self.send_response(200)  # HTTP status 200 OK
+            self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
             info = {
@@ -40,14 +41,9 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_error(404, "Endpoint not found")
 
 
-def run(server_class=HTTPServer,
-        handler_class=SimpleHTTPRequestHandler, port=8000):
-    """ Set up and start the HTTP server."""
-    server_address = ("localhost", port)
-    httpd = server_class(server_address, handler_class)
+if __name__ == "__main__":
+    port = 8000
+    server_address = ('', port)
+    httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
     print(f"Starting httpd server on port {port}")
     httpd.serve_forever()
-
-
-if __name__ == "__main__":
-    run()
