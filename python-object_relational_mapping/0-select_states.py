@@ -6,16 +6,11 @@ import MySQLdb
 if __name__ == "__main__":
 
     def main():
-    # Retrieve command-line arguments
-        mysql_username = sys.argv[1]
-        mysql_password = sys.argv[2]
-        db_name = sys.argv[3]
-
         # Connect to MySQL database
         db = MySQLdb.connect(host="localhost",
-                            user=mysql_username,
-                            passwd=mysql_password,
-                            db=db_name,
+                            user=sys.argv[1],
+                            passwd=sys.argv[2],
+                            db=sys.argv[3],
                             port=3306)
 
         # Create a cursor object to interact with the database
